@@ -1,0 +1,26 @@
+runtime: php
+env: flex
+
+runtime_config: document_root: public
+
+# Ensure we skip ".env", which is only for local development
+skip_files: 
+    - .env
+
+automatic_scaling:
+    min_num_instances: 1
+    max_num_instances: 1
+
+resources:
+    cpu: 1
+    memory_gb: 2
+    disk_size_gb: 50
+
+env_variables:
+    # Put production environment variables here.
+    APP_DEBUG: true
+    APP_ENV: production
+    APP_KEY: base64:eRvi2TC/f1VSwHdjhjX02N3veSaiXaI0PHDaS5hW8GI=
+    APP_NAME: "mobl"
+
+    LOG_LEVEL: debug
